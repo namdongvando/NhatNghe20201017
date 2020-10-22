@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhuongTrinhBac2", "PhuongTr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuDungRandom", "SuDungRandom\SuDungRandom.csproj", "{7193002C-74A6-40F2-9932-BD2F70604A0D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuDungVongLapFor", "SuDungVongLapFor\SuDungVongLapFor.csproj", "{193DF8E4-1527-4380-9506-BDE081C99C61}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuDungVongLapForTT", "SuDungVongLapForTT\SuDungVongLapForTT.csproj", "{DF3CE9C0-660B-40F3-92EA-0875636FB7DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{7193002C-74A6-40F2-9932-BD2F70604A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7193002C-74A6-40F2-9932-BD2F70604A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7193002C-74A6-40F2-9932-BD2F70604A0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{193DF8E4-1527-4380-9506-BDE081C99C61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{193DF8E4-1527-4380-9506-BDE081C99C61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{193DF8E4-1527-4380-9506-BDE081C99C61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{193DF8E4-1527-4380-9506-BDE081C99C61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF3CE9C0-660B-40F3-92EA-0875636FB7DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF3CE9C0-660B-40F3-92EA-0875636FB7DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF3CE9C0-660B-40F3-92EA-0875636FB7DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF3CE9C0-660B-40F3-92EA-0875636FB7DC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
