@@ -43,9 +43,7 @@ namespace XacDinhChanLe
             else {
                 Console.WriteLine("Gioi");
             }
-
-
-
+            
         }
     }
 }
