@@ -52,11 +52,29 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPhepChia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPhepChia.Designer.cs">
+      <DependentUpon>formPhepChia.cs</DependentUpon>
+    </Compile>
     <Compile Include="formPhepCong.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formPhepCong.Designer.cs">
       <DependentUpon>formPhepCong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPhepNhan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPhepNhan.Designer.cs">
+      <DependentUpon>formPhepNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="formPhepTru.cs">
       <SubType>Form</SubType>
@@ -64,17 +82,38 @@
     <Compile Include="formPhepTru.Designer.cs">
       <DependentUpon>formPhepTru.cs</DependentUpon>
     </Compile>
+    <Compile Include="formPhuongTrinh\formPhuongTrinhBac1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPhuongTrinh\formPhuongTrinhBac1.Designer.cs">
+      <DependentUpon>formPhuongTrinhBac1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="formPhuongTrinh\formPhuongTrinhBac2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formPhuongTrinh\formPhuongTrinhBac2.Designer.cs">
+      <DependentUpon>formPhuongTrinhBac2.cs</DependentUpon>
+    </Compile>
     <Compile Include="PhuongTrinh.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="formPhepCong.resx">
       <DependentUpon>formPhepCong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formPhepTru.resx">
       <DependentUpon>formPhepTru.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPhuongTrinh\formPhuongTrinhBac1.resx">
+      <DependentUpon>formPhuongTrinhBac1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="formPhuongTrinh\formPhuongTrinhBac2.resx">
+      <DependentUpon>formPhuongTrinhBac2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
