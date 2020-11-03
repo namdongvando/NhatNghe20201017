@@ -16,6 +16,13 @@ namespace WindowsFormsApp1
     {
         public FormMain()
         {
+            Form dangNhap = new FormDangNhap();
+            //dangNhap.Show();
+            var isOk= dangNhap.ShowDialog();
+            if (isOk != DialogResult.OK)
+            {
+                Close();
+            }
             InitializeComponent();
         }
 
@@ -80,6 +87,21 @@ namespace WindowsFormsApp1
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void phươngTrìnhToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tinhNhanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

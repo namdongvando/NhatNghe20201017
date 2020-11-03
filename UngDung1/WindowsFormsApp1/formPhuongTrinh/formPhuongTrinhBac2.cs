@@ -47,11 +47,18 @@ namespace WindowsFormsApp1.formPhuongTrinh
                     throw new Exception("Lỗi Số C");
                 }
                 PhuongTrinh pt = new PhuongTrinh();
+                PhuongTrinhBac2 ptb2 = new PhuongTrinhBac2(a,b,c);
+                ptb2.Giai();
+
                 double[] nghiem = pt.PhuongTrinhBac2(a, b, c);
                 txtNghiem1.Text =
-                    string.Format("{0:F2}", nghiem[0]);
-                txtNghiem2.Text = 
-                    string.Format("{0:F2}", nghiem[1]);
+                    string.Format("{0:F2}", ptb2.x1);
+                txtNghiem2.Text =
+                    string.Format("{0:F2}", ptb2.x2);
+                //txtNghiem1.Text =
+                //    string.Format("{0:F2}", nghiem[0]);
+                //txtNghiem2.Text = 
+                //    string.Format("{0:F2}", nghiem[1]);
             }
             catch (Exception ex )
             {

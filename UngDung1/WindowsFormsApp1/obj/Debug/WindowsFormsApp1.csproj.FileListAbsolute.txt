@@ -13,3 +13,4 @@ C:\Users\NN\Desktop\Share\NhatNghe20201017\UngDung1\WindowsFormsApp1\obj\Debug\W
 C:\Users\NN\Desktop\Share\NhatNghe20201017\UngDung1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormMain.resources
 C:\Users\NN\Desktop\Share\NhatNghe20201017\UngDung1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.formPhuongTrinh.formPhuongTrinhBac1.resources
 C:\Users\NN\Desktop\Share\NhatNghe20201017\UngDung1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.formPhuongTrinh.formPhuongTrinhBac2.resources
+C:\Users\NN\Desktop\Share\NhatNghe20201017\UngDung1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormDangNhap.resources
