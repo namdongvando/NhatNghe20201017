@@ -82,6 +82,12 @@
     <Compile Include="FormDanhSachSinhVien.Designer.cs">
       <DependentUpon>FormDanhSachSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSuaLopHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSuaLopHoc.Designer.cs">
+      <DependentUpon>FormSuaLopHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormThemLopHoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,10 +100,17 @@
     <Compile Include="FormThemSinhVien.Designer.cs">
       <DependentUpon>FormThemSinhVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="LopHoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDanhSachLopHoc.resx">
+      <DependentUpon>FormDanhSachLopHoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSuaLopHoc.resx">
+      <DependentUpon>FormSuaLopHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormThemLopHoc.resx">
       <DependentUpon>FormThemLopHoc.cs</DependentUpon>

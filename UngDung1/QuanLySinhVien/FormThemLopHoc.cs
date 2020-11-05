@@ -16,5 +16,63 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// them lop hoc
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LopHoc lopHoc = GetInputForm();
+                lopHoc.ThemLopHoc();
+                //MessageBox.Show(lopHoc.LopHoc2String());
+                //Form fDanhSach = new FormDanhSachLopHoc();
+                //fDanhSach.Show();
+                DialogResult = DialogResult.OK;
+                //Close();
+                //SetInputForm(new LopHoc());
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Thông Báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+
+        }
+       /// <summary>
+       /// găn thông tin cho form
+       /// </summary>
+       /// <param name="lopHoc">obj lop hoc</param>
+        private void SetInputForm(LopHoc lopHoc)
+        {
+            txtMaLop.Text = lopHoc.MaLop;
+            txtTenLop.Text = lopHoc.TenLop;
+            txtDiaChi.Text = lopHoc.DiaChi;
+        }
+        /// <summary>
+        /// Lấy thông tin tư form
+        /// </summary>
+        /// <returns></returns>
+        private LopHoc GetInputForm()
+        {
+            if (txtMaLop.Text == "") {
+                throw new Exception("Vui Lòng Mã Nhóm.");
+            }
+            if (txtTenLop.Text == "")
+            {
+                throw new Exception("Vui Lòng Tên Lớp.");
+            }
+            if (txtDiaChi.Text == "")
+            {
+                throw new Exception("Vui Lòng Địa Chỉ.");
+            }
+            return new LopHoc(
+                txtMaLop.Text,
+                txtTenLop.Text,
+                txtDiaChi.Text);
+        }
     }
 }

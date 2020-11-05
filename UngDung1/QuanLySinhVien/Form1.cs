@@ -40,8 +40,7 @@ namespace QuanLySinhVien
         private void thêmLớpToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form fThemLop = new FormThemLopHoc();
-            fThemLop.MdiParent = this;
-            fThemLop.Show();
+            fThemLop.ShowDialog();
 
         }
 
@@ -86,6 +85,11 @@ namespace QuanLySinhVien
             Form fThemLop = new FormBaoCaoDiemTheoLop();
             fThemLop.MdiParent = this;
             fThemLop.Show();
+        }
+
+        private void quảnLýLớpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
