@@ -60,7 +60,7 @@ namespace QuanLySinhVien
 
         private void danhSáchSinhViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form fThemLop = new FormThemSinhVien();
+            Form fThemLop = new FormDanhSachSinhVien();
             fThemLop.MdiParent = this;
             fThemLop.Show();
         }

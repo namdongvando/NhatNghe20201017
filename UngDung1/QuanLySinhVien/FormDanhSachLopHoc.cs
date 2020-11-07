@@ -49,7 +49,16 @@ namespace QuanLySinhVien
         {
             // lay ma lop hoc khi chon
             string maLopHoc = dgvDanhSachLopHoc.Rows[e.RowIndex].Cells[0].Value.ToString();
-            
+            MessageBox.Show(maLopHoc);
+
+            Form fSuaLopHoc = new FormSuaLopHoc();
+            fSuaLopHoc.ShowDialog();
+
+
+        }
+
+        private void dgvDanhSachLopHoc_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
