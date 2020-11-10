@@ -47,12 +47,19 @@ namespace QuanLySinhVien
 
         private void dgvDanhSachLopHoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // lay ma lop hoc khi chon
-            string maLopHoc = dgvDanhSachLopHoc.Rows[e.RowIndex].Cells[0].Value.ToString();
-            MessageBox.Show(maLopHoc);
+            // lấy mã lớp hoc tử datagreaview
+            string maLopHoc = dgvDanhSachLopHoc.Rows[e.RowIndex].Cells[0]
+                .Value.ToString();
+            LopHoc lhSua 
+                = LopHoc.LopHocById(maLopHoc);
+
+            LopHoc.SetThongTinSuaLopHoc(lhSua);
 
             Form fSuaLopHoc = new FormSuaLopHoc();
-            fSuaLopHoc.ShowDialog();
+            var isOk = fSuaLopHoc.ShowDialog();
+            if (isOk == DialogResult.OK) {
+                ResetDanhSach();
+            }
 
 
         }

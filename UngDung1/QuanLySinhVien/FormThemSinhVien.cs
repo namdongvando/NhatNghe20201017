@@ -19,6 +19,7 @@ namespace QuanLySinhVien
 
         private void FormThemSinhVien_Load(object sender, EventArgs e)
         {
+            // khoi tao danh sach goi tinh
             List<GioiTinh> lgt = GioiTinh.Get();
             cbbGioiTinh.DataSource = lgt;
             cbbGioiTinh.DisplayMember = "Name";
@@ -70,6 +71,66 @@ namespace QuanLySinhVien
                 , gt.Id
                 , dtpNgaySinh.Value
                 ) ;
+        }
+
+        private void cbbGioiTinh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDiaChi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSDT_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTenSinhVien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMaSinhVien_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

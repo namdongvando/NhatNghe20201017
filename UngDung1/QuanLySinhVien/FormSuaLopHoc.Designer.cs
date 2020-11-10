@@ -108,6 +108,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormSuaLopHoc";
             this.Text = "FormSuaLopHoc";
+            this.Load += new System.EventHandler(this.FormSuaLopHoc_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

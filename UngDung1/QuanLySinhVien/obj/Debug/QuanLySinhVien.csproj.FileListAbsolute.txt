@@ -13,3 +13,4 @@ C:\Users\NN\Desktop\Share\NhatNghe20201017\UngDung1\QuanLySinhVien\obj\Debug\Qua
 C:\Users\NN\Desktop\Share\NhatNghe20201017\UngDung1\QuanLySinhVien\obj\Debug\QuanLySinhVien.FormSuaLopHoc.resources
 C:\Users\NN\Desktop\Share\NhatNghe20201017\UngDung1\QuanLySinhVien\obj\Debug\QuanLySinhVien.FormDanhSachSinhVien.resources
 C:\Users\NN\Desktop\Share\NhatNghe20201017\UngDung1\QuanLySinhVien\obj\Debug\QuanLySinhVien.FormThemSinhVien.resources
+C:\Users\NN\Desktop\Share\NhatNghe20201017\UngDung1\QuanLySinhVien\obj\Debug\QuanLySinhVien.formSuaSinhVien.resources

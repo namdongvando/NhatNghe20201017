@@ -12,6 +12,8 @@ namespace QuanLySinhVien
 {
     public partial class FormDanhSachSinhVien : Form
     {
+        private object sv;
+
         public FormDanhSachSinhVien()
         {
             InitializeComponent();
@@ -19,6 +21,19 @@ namespace QuanLySinhVien
 
         private void dgvDanhSachSinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string maSV = dgvDanhSachSinhVien
+                .Rows[e.RowIndex].Cells[0]
+                .Value.ToString();
+            SinhVien svSua = 
+                SinhVien.SinhVienById(maSV);
+
+            // luu thông tin sinh vien can sua
+            SinhVien.SetSinhVienSua(svSua);
+            Form fSuaSV = new formSuaSinhVien();
+            
+          var isOk =  fSuaSV.ShowDialog();
+            if (isOk == DialogResult.OK)
+                ResetDanhSachSinhVien();
 
         }
 
@@ -32,7 +47,7 @@ namespace QuanLySinhVien
         private void ResetDanhSachSinhVien()
         {
             if (SinhVien.DanhSachSinhVien != null)
-                dgvDanhSachSinhVien.DataSource = SinhVien.DanhSachSinhVien;
+                dgvDanhSachSinhVien.DataSource = SinhVien.GetDanhSachSinhVien().ToList();
 
         }
         /// <summary>

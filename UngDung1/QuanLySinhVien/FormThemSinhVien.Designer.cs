@@ -51,6 +51,7 @@
             this.label1.Size = new System.Drawing.Size(70, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã Sinh Viên";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtMaSinhVien
             // 
@@ -58,6 +59,7 @@
             this.txtMaSinhVien.Name = "txtMaSinhVien";
             this.txtMaSinhVien.Size = new System.Drawing.Size(278, 20);
             this.txtMaSinhVien.TabIndex = 1;
+            this.txtMaSinhVien.TextChanged += new System.EventHandler(this.txtMaSinhVien_TextChanged);
             // 
             // txtTenSinhVien
             // 
@@ -65,6 +67,7 @@
             this.txtTenSinhVien.Name = "txtTenSinhVien";
             this.txtTenSinhVien.Size = new System.Drawing.Size(278, 20);
             this.txtTenSinhVien.TabIndex = 3;
+            this.txtTenSinhVien.TextChanged += new System.EventHandler(this.txtTenSinhVien_TextChanged);
             // 
             // label2
             // 
@@ -74,6 +77,7 @@
             this.label2.Size = new System.Drawing.Size(74, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Tên Sinh Viên";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtSDT
             // 
@@ -81,6 +85,7 @@
             this.txtSDT.Name = "txtSDT";
             this.txtSDT.Size = new System.Drawing.Size(278, 20);
             this.txtSDT.TabIndex = 5;
+            this.txtSDT.TextChanged += new System.EventHandler(this.txtSDT_TextChanged);
             // 
             // label3
             // 
@@ -90,6 +95,7 @@
             this.label3.Size = new System.Drawing.Size(29, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "SĐT";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // txtDiaChi
             // 
@@ -97,6 +103,7 @@
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(278, 20);
             this.txtDiaChi.TabIndex = 7;
+            this.txtDiaChi.TextChanged += new System.EventHandler(this.txtDiaChi_TextChanged);
             // 
             // label4
             // 
@@ -106,6 +113,7 @@
             this.label4.Size = new System.Drawing.Size(41, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Địa Chỉ";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -115,6 +123,7 @@
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Giới Tính";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -124,6 +133,7 @@
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Ngày Sinh";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // button1
             // 
@@ -142,6 +152,7 @@
             this.cbbGioiTinh.Name = "cbbGioiTinh";
             this.cbbGioiTinh.Size = new System.Drawing.Size(277, 21);
             this.cbbGioiTinh.TabIndex = 13;
+            this.cbbGioiTinh.SelectedIndexChanged += new System.EventHandler(this.cbbGioiTinh_SelectedIndexChanged);
             // 
             // dtpNgaySinh
             // 
@@ -149,6 +160,7 @@
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(277, 20);
             this.dtpNgaySinh.TabIndex = 14;
+            this.dtpNgaySinh.ValueChanged += new System.EventHandler(this.dtpNgaySinh_ValueChanged);
             // 
             // FormThemSinhVien
             // 

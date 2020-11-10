@@ -35,6 +35,9 @@
             // 
             // dgvDanhSachSinhVien
             // 
+            this.dgvDanhSachSinhVien.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dgvDanhSachSinhVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDanhSachSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachSinhVien.Location = new System.Drawing.Point(12, 95);
             this.dgvDanhSachSinhVien.Name = "dgvDanhSachSinhVien";

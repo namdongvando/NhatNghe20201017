@@ -16,5 +16,10 @@ namespace QuanLySinhVien
         {
             InitializeComponent();
         }
+
+        private void FormSuaLopHoc_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
