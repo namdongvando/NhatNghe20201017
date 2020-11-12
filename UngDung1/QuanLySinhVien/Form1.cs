@@ -91,5 +91,11 @@ namespace QuanLySinhVien
         {
 
         }
+
+        private void cậpNhậtBảngĐiểmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form fBangDiem = new FormBangDiem();
+            fBangDiem.ShowDialog();
+        }
     }
 }

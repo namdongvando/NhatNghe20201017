@@ -41,6 +41,18 @@ namespace QuanLySinhVien
                 DanhSachLopHoc = new List<LopHoc>();
             DanhSachLopHoc.Add(this);
         }
+
+        public static List<LopHoc> GetDanhSachLopHoc()
+        {
+            if (DanhSachLopHoc == null)
+                return new List<LopHoc>();
+            return DanhSachLopHoc;
+        }
+
+
+
+
+
         /// <summary>
         /// Xóa lop hoc trong danh sách
         /// </summary>
