@@ -14,6 +14,8 @@ namespace QuanLySinhVien
     {
 
         private int IsThem = 1;
+        const int Sua = 0;
+        const int Them = 1;
         // 1 them 
         // 0 sua
 
@@ -30,12 +32,16 @@ namespace QuanLySinhVien
                 // them
                 if (IsThem == 1)
                 {
+                    BangDiem.Them(bd);
+                    ResetData();
                     // reset data
                 }
                 else
                 {
                     // sua
-
+                    BangDiem.Sua(bd);
+                    IsThem = Them;
+                   ResetData();
                 }
             }
             catch (Exception ex)
@@ -43,6 +49,13 @@ namespace QuanLySinhVien
                 MessageBox.Show(ex.Message);
             }
             
+        }
+
+        private void ResetData()
+        {
+            dgvBangDiem.DataSource =
+                BangDiem.GetDanhSachBangDiem()
+                .ToList();
         }
 
         private BangDiem GetInputForm()
@@ -91,14 +104,14 @@ namespace QuanLySinhVien
                 {
                     txtLy.SelectAll();
                     txtLy.Focus();
-                    throw new Exception("Điểm Toán Không Hợp Lệ");
+                    throw new Exception("Điểm Lý Không Hợp Lệ");
                 }
             }
             else
             {
                 txtLy.SelectAll();
                 txtLy.Focus();
-                throw new Exception("Điểm Toán Không Hợp Lệ");
+                throw new Exception("Điểm Lý Không Hợp Lệ");
             }
             #endregion
             #region Hoa
@@ -108,14 +121,14 @@ namespace QuanLySinhVien
                 {
                     txtHoa.SelectAll();
                     txtHoa.Focus();
-                    throw new Exception("Điểm Toán Không Hợp Lệ");
+                    throw new Exception("Điểm Hóa Không Hợp Lệ");
                 }
             }
             else
             {
                 txtHoa.SelectAll();
                 txtHoa.Focus();
-                throw new Exception("Điểm Toán Không Hợp Lệ");
+                throw new Exception("Điểm Hóa Không Hợp Lệ");
             }
             #endregion
             SinhVien itemSV = (SinhVien) cbbSinhVien.SelectedItem;
@@ -133,6 +146,43 @@ namespace QuanLySinhVien
             cbbSinhVien.DataSource = SinhVien.GetDanhSachSinhVien().ToList();
             cbbSinhVien.DisplayMember = "TenSV";
             cbbSinhVien.ValueMember = "MaSV";
+        }
+
+        private void dgvBangDiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            IsThem = Sua;
+            string maSV = dgvBangDiem
+                .Rows[e.RowIndex]
+                .Cells[0]
+                .Value.ToString();
+            string maLop = dgvBangDiem
+                .Rows[e.RowIndex]
+                .Cells[1]
+                .Value.ToString();
+            // láy thông tin dong cần sửa
+            BangDiem bdSua = 
+                BangDiem.BangDiemByMaSVMaLop(maSV, maLop);
+            // gán thông tin dong can sua vào form
+            SetInputForm(bdSua);
+        }
+
+        private void SetInputForm(BangDiem bdSua)
+        {
+            txtToan.Text = bdSua.Toan.ToString();
+            txtLy.Text = bdSua.Ly.ToString();
+            txtHoa.Text = bdSua.Hoa.ToString();
+            cbbLopHoc.SelectedValue = bdSua.MaLop;
+            cbbSinhVien.SelectedValue = bdSua.MaSV;
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            var isOk = MessageBox.Show("Bạn Có Muốn Xóa Không?");
+            if (isOk != DialogResult.OK)
+                return;
+            BangDiem bdSua = GetInputForm();
+            BangDiem.Xoa(bdSua.MaLop,bdSua.MaSV);
+
         }
     }
 }

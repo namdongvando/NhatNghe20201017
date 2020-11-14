@@ -24,6 +24,10 @@ namespace QuanLySinhVien
             Hoa = hoa;
         }
 
+        public BangDiem()
+        {
+        }
+
         public static void Xoa(string maLop , string maSinhVien)
         {
             DanhSachBangDiem
@@ -47,11 +51,20 @@ namespace QuanLySinhVien
         /// lấy danh sách bảng diem
         /// </summary>
         /// <returns></returns>
-        public List<BangDiem> GetDanhSachBangDiem() {
-           
+        public static List<BangDiem> GetDanhSachBangDiem() {
+            if (DanhSachBangDiem == null)
+                return new List<BangDiem>();
             return DanhSachBangDiem;
         }
 
-
+        public static BangDiem BangDiemByMaSVMaLop(string maSV, string maLop)
+        {
+            foreach (var item in DanhSachBangDiem)
+            {
+                if (item.MaLop == maLop && item.MaSV == maSV)
+                    return item;
+            }
+            return new BangDiem();
+        }
     }
 }

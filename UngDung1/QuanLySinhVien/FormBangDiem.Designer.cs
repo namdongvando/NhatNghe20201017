@@ -53,6 +53,7 @@
             this.dgvBangDiem.Name = "dgvBangDiem";
             this.dgvBangDiem.Size = new System.Drawing.Size(776, 367);
             this.dgvBangDiem.TabIndex = 0;
+            this.dgvBangDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangDiem_CellContentClick);
             // 
             // cbbSinhVien
             // 
@@ -131,7 +132,7 @@
             // 
             // txtHoa
             // 
-            this.txtHoa.Location = new System.Drawing.Point(392, 28);
+            this.txtHoa.Location = new System.Drawing.Point(392, 26);
             this.txtHoa.Name = "txtHoa";
             this.txtHoa.Size = new System.Drawing.Size(41, 20);
             this.txtHoa.TabIndex = 9;
@@ -154,6 +155,7 @@
             this.btnXoa.TabIndex = 12;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // FormBangDiem
             // 
