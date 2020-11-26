@@ -1,0 +1,9 @@
+ Random RD = new Random();
+            
+            ConnectDB cdb = new ConnectDB();
+            string sql = string.Format(@"insert into tblSinhVien
+(MaSV,TenSV,DiaChi,SDT,NgaySinh,GioiTinh) Values('{0}',N'{1}',N'{2}','{3}','{4}',{5})"
+, "Sv001"+ RD.Next(1,10000).ToString() , "Tí Nguyen", "HCM"
+, "23412312", new DateTime(2000, 1, 2).ToString()
+,1);
+            cdb.InsertQuery(sql);

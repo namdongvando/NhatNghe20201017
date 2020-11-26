@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestConnectDB;
 
 namespace QuanLySinhVien
 {
@@ -98,26 +99,48 @@ namespace QuanLySinhVien
             if (DanhSachSinhVien == null)
                 DanhSachSinhVien = new List<SinhVien>();
             DanhSachSinhVien.Add(this);
+
+            string sql = string.Format(@"insert into tblSinhVien
+(MaSV,TenSV,DiaChi,SDT,NgaySinh,GioiTinh) Values('{0}',N'{1}',N'{2}','{3}','{4}',{5})"
+,this.MaSV,this.TenSV,this.DiaChi,this.SDT,this.NgaySinh,this.GioiTinh);
+            ConnectDB ConDB = new ConnectDB();
+            ConDB.InsertQuery(sql);
+
         }
         public static void Them(SinhVien sv)
         {
-            if (DanhSachSinhVien == null)
-                DanhSachSinhVien = new List<SinhVien>();
-            DanhSachSinhVien.Add(sv);
+            string sql = string.Format(@"insert into tblSinhVien
+(MaSV,TenSV,DiaChi,SDT,NgaySinh,GioiTinh) Values('{0}',N'{1}',N'{2}','{3}','{4}',{5})"
+, sv.MaSV, sv.TenSV, sv.DiaChi, sv.SDT, sv.NgaySinh, sv.GioiTinh==true?1:0);
+            ConnectDB ConDB = new ConnectDB();
+            ConDB.InsertQuery(sql);
         }
 
         public static void Xoa(string maSV) {
             DanhSachSinhVien
                 .RemoveAll(sv => sv.MaSV == maSV);
+            string sql = string.Format( @"DELETE FROM tblSinhVien WHERE MaSV = '{0}'",maSV);
+
+            ConnectDB ConDB = new ConnectDB();
+            ConDB.InsertQuery(sql);
+
         }
         /// <summary>
         /// sua thong tin sinh vien
         /// </summary>
         /// <param name="sinhVien"></param>
-        public static void Sua(SinhVien sinhVien)
+        public static void Sua(SinhVien sv)
         {
-            Xoa(sinhVien.MaSV);
-            Them(sinhVien);
+            string sql = string.Format(@"update tblSinhVien set
+TenSV = '{0}'
+,SDT = '{1}'
+,DiaChi = '{2}'
+,NgaySinh = '{3}'
+,GioiTinh = '{4}'
+ where MaSV = '{5}'"
+, sv.TenSV, sv.SDT, sv.DiaChi, sv.NgaySinh, sv.GioiTinh == true ? 1 : 0, sv.MaSV );
+            ConnectDB ConDB = new ConnectDB();
+            ConDB.InsertQuery(sql);
         }
 
     }

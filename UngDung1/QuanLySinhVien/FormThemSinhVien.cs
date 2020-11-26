@@ -36,6 +36,7 @@ namespace QuanLySinhVien
                 SinhVien sv = GetInputForm();
                 SinhVien.Them(sv);
                 DialogResult = DialogResult.OK;
+            
             }
             catch (Exception ex)
             {
