@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestConnectDB;
 
 namespace QuanLySinhVien
 {
@@ -37,16 +39,27 @@ namespace QuanLySinhVien
         /// </summary>
         public void ThemLopHoc()
         {
-            if (DanhSachLopHoc == null)
-                DanhSachLopHoc = new List<LopHoc>();
-            DanhSachLopHoc.Add(this);
+            //insert into tblLopHoc (MaLop, TenLop, DiaChi) values('001', 'toan', 'p001')
+            string sql = @"insert into tblLopHoc (MaLop, TenLop, DiaChi) values('{0}', '{1}', '{2}')";
+            ConnectDB cdb = new ConnectDB();
+            cdb.InsertQuery(
+                string.Format(sql, this.MaLop, this.TenLop, this.DiaChi));
         }
 
         public static List<LopHoc> GetDanhSachLopHoc()
         {
-            if (DanhSachLopHoc == null)
-                return new List<LopHoc>();
-            return DanhSachLopHoc;
+            ConnectDB cdb = new ConnectDB();
+            string sql = "select * from tblLopHoc";
+            SqlDataReader res = cdb.SelectQuery(sql);
+            List<LopHoc> lLopHoc = new List<LopHoc>();
+            while (res.Read()) {
+                string maLop = res.GetValue(0).ToString();
+                string tenLop = res.GetValue(1).ToString();
+                string diaChi = res.GetValue(2).ToString();
+                LopHoc lh = new LopHoc(maLop, tenLop, diaChi);
+                lLopHoc.Add(lh);
+            }
+            return lLopHoc;
         }
 
 
@@ -59,23 +72,32 @@ namespace QuanLySinhVien
         /// <param name="maLopHoc"></param>
         public static void Xoa(string maLopHoc)
         {
-            DanhSachLopHoc.RemoveAll(lh => lh.MaLop == maLopHoc);
+            string sql = @"delete from tblLopHoc where MaLop = '{0}'";
+            ConnectDB cdb = new ConnectDB();
+            cdb.InsertQuery(String.Format(sql, maLopHoc));
+
         }
         public static void Sua(LopHoc lh)
         {
-            Xoa(lh.MaLop);
-            ThemLopHoc(lh);
+            string sql = @"update tblLopHoc
+set TenLop = '{0}',DiaChi = '{1}'
+where MaLop= '{2}'";
+            ConnectDB cdb = new ConnectDB();
+            cdb.InsertQuery(String.Format(sql, lh.TenLop, lh.DiaChi, lh.MaLop));
         }
 
         public static LopHoc LopHocById(string maLopHoc)
         {
-            if (DanhSachLopHoc != null)
-                foreach (var lopHoc in DanhSachLopHoc)
-                {
-                    if (lopHoc.MaLop == maLopHoc)
-                        return lopHoc;
-                }
-            return new LopHoc();
+            string sql = @"select * from tblLopHoc where MaLop= '{0}'";
+            ConnectDB cdb = new ConnectDB();
+            var res = cdb.SelectQuery(string.Format(sql, maLopHoc));
+            res.Read();
+            string maLop = res.GetValue(0).ToString().Trim();
+            string tenLop = res.GetValue(1).ToString().Trim();
+            string diaChi = res.GetValue(2).ToString().Trim();
+
+            return new LopHoc(
+                maLop, tenLop, diaChi);
         }
 
         public static void SetThongTinSuaLopHoc(LopHoc lhSua)
@@ -90,9 +112,10 @@ namespace QuanLySinhVien
         }
         private static void ThemLopHoc(LopHoc lh)
         {
-            if (DanhSachLopHoc == null)
-                DanhSachLopHoc = new List<LopHoc>();
-            DanhSachLopHoc.Add(lh);
+            string sql = @"insert into tblLopHoc (MaLop, TenLop, DiaChi) values('{0}', '{1}', '{2}')";
+            ConnectDB cdb = new ConnectDB();
+            cdb.InsertQuery(
+                string.Format(sql, lh.MaLop, lh.TenLop, lh.DiaChi));
         }
     }
 }

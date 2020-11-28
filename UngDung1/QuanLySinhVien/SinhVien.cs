@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,13 +25,21 @@ namespace QuanLySinhVien
         /// <returns></returns>
         public static SinhVien SinhVienById(string maSV)
         {
-            
-            foreach (var sv in DanhSachSinhVien)
-            {
-                if (sv.MaSV == maSV)
-                    return sv;
-            }
-            return new SinhVien();
+            //select* from tblSinhVien where MaSV = '23423423'
+            string sql = @"select * from tblSinhVien where MaSV = '{0}'";
+            ConnectDB cdb = new ConnectDB();
+            SqlDataReader res = cdb.SelectQuery(string.Format(sql, maSV));
+            res.Read();
+            string tenSV = res.GetValue(1).ToString();
+            string diaChi = res.GetValue(2).ToString();
+            string sDT = res.GetValue(3).ToString();
+            string ngaySinh = res.GetValue(4).ToString();
+            string gioiTinh = res.GetValue(5).ToString();
+            SinhVien sv = new SinhVien(
+                maSV, tenSV, sDT, diaChi
+                , Boolean.Parse(gioiTinh)
+                , DateTime.Parse(ngaySinh));
+            return sv;
         }
         // gán thong tin sinh vien can sua
         public static void SetSinhVienSua(SinhVien svSua)
@@ -66,9 +75,23 @@ namespace QuanLySinhVien
 
         public static List<SinhVien> GetDanhSachSinhVien()
         {
-            if (DanhSachSinhVien == null)
-                return new List<SinhVien>();
-            return DanhSachSinhVien;
+            ConnectDB cdb = new ConnectDB();
+           SqlDataReader res =  cdb.SelectQuery("select * from tblSinhVien");
+            List<SinhVien> lsv = new List<SinhVien>();    
+            while (res.Read()) {
+                string maSV = res.GetValue(0).ToString();
+                string tenSV = res.GetValue(1).ToString();
+                string diaChi = res.GetValue(2).ToString();
+                string sDT = res.GetValue(3).ToString();
+                string ngaySinh = res.GetValue(4).ToString();
+                string gioiTinh = res.GetValue(5).ToString();
+                SinhVien sv = new SinhVien(
+                    maSV, tenSV, sDT, diaChi
+                    , Boolean.Parse(gioiTinh) 
+                    , DateTime.Parse(ngaySinh));
+                lsv.Add(sv);
+            }
+            return lsv;
         }
 
         public SinhVien() {
