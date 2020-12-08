@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestConnectDB", "TestConnec
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuDungLinq", "SuDungLinq\SuDungLinq.csproj", "{8F2D8D4B-191C-4670-9228-48379E5FA291}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{43806AF8-D6E8-47FD-9BD0-98945CF1D239}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -99,6 +101,10 @@ Global
 		{8F2D8D4B-191C-4670-9228-48379E5FA291}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F2D8D4B-191C-4670-9228-48379E5FA291}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F2D8D4B-191C-4670-9228-48379E5FA291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43806AF8-D6E8-47FD-9BD0-98945CF1D239}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43806AF8-D6E8-47FD-9BD0-98945CF1D239}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43806AF8-D6E8-47FD-9BD0-98945CF1D239}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43806AF8-D6E8-47FD-9BD0-98945CF1D239}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

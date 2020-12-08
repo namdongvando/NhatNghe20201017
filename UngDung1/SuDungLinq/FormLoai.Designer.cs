@@ -51,6 +51,7 @@
             this.dgvLoai.Size = new System.Drawing.Size(437, 385);
             this.dgvLoai.TabIndex = 0;
             this.dgvLoai.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoai_CellContentClick);
+            this.dgvLoai.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoai_CellValueChanged);
             // 
             // txtTuKhoa
             // 
@@ -137,6 +138,7 @@
             this.btnThem.TabIndex = 10;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
@@ -146,6 +148,7 @@
             this.btnXoa.TabIndex = 11;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // FormLoai
             // 
